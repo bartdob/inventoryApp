@@ -2,7 +2,7 @@ import pytest
 from user_admin.models import CustomUser, UserActivities
 
 
-@pytest.mark.skip("test is ok, for now will skiped")
+@pytest.mark.slow
 @pytest.mark.filterwarnings
 @pytest.mark.django_db
 def test_custom_user_create():
