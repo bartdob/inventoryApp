@@ -5,6 +5,8 @@ env:
   DB_HOST: 127.0.0.1
   DB_PORT: = 5434
   DB_NAME: inventory_db
+  DB_USER: ${{ secrets.DB_USER }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
 
 on:
@@ -22,14 +24,11 @@ jobs:
       matrix:
         python-version: [3.8, 3.9]
 
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
-    - name: Decode base64 secrets
-      run: echo $SECRETS_FILE_CONTENTS | base64 -d > lib/path/to/secrets.dart
-      env:
-        SECRETS_FILE_CONTENTS: ${{ secrets.SECRETS_FILE_CONTENTS }}
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
