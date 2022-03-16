@@ -63,5 +63,3 @@ class UserActivities(models.Model):
 
     def __str__(self):
         return f"{self.fullname} {self.action} on {self.created_at.strftime('%Y-%m-%d %H:%M')}"
-
-
