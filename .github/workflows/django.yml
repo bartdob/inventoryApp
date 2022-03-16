@@ -26,6 +26,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
+    - name: Decode base64 secrets
+      run: echo $SECRETS_FILE_CONTENTS | base64 -d > lib/path/to/secrets.dart
+      env:
+        SECRETS_FILE_CONTENTS: ${{ secrets.SECRETS_FILE_CONTENTS }}
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
