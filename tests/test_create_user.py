@@ -1,5 +1,5 @@
 import pytest
-from user_admin.models import CustomUser, UserActivities
+from user_admin.models import CustomUser, UserActivities, CustomUserManager
 
 
 @pytest.mark.slow
@@ -11,5 +11,6 @@ def test_custom_user_create():
 
 
 @pytest.mark.skip
-def test_user_activities():
-    pass
+def test_superuser_create():
+    CustomUserManager.create_superuser('test@test.pl', 'test', 'test')
+    assert CustomUserManager.objects.count() == 1
