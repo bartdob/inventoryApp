@@ -2,7 +2,7 @@ from django.urls import include, path
 from .views import CreateUserView, LoginView, UpdatePasswordView, MeView
 from rest_framework.routers import DefaultRouter, SimpleRouter
 
-router = SimpleRouter(trailing_slash=False)
+router = DefaultRouter(trailing_slash=False)
 
 router.register("create-user", CreateUserView, 'create user')
 router.register("login", LoginView, 'login')

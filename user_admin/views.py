@@ -65,7 +65,7 @@ class LoginView(ModelViewSet):
         return Response({"access": access})
 
 
-class UpdatePasswordView(serializers.Serializer):
+class UpdatePasswordView(ModelViewSet):
     serializer_class = UpdatePasswordSerializer
     http_method_names = ["post"]
     queryset = CustomUser.objects.all()
