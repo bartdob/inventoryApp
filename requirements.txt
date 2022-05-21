@@ -9,4 +9,4 @@ sqlparse==0.4.2
 tzdata==2021.5
 pytest~=7.1.0
 requests~=2.27.1
-PyJWT~=2.3.0
+PyJWT~=2.4.0
