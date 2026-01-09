@@ -10,3 +10,4 @@ tzdata==2021.5
 pytest~=7.1.0
 requests~=2.27.1
 PyJWT~=2.3.0
+urllib3>=2.6.3 # not directly required, pinned by Snyk to avoid a vulnerability
